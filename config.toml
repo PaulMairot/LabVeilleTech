@@ -1,3 +1,26 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://example.com"
+languageCode = "fr-CH"
+title = "LabVeilleTech - Paul"
+theme = "anubis"
+
+paginate = 5
+
+[menu]
+
+[[menu.main]]
+name = "Posts"
+identifier = "archive"
+url = "/posts/"
+weight = 1
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 2
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 3
