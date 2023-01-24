@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LabVeilleTech - Paul</title><link>https://example.com/</link><description>LabVeilleTech - Paul</description><generator>Hugo -- gohugo.io</generator><language>fr-CH</language><lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Article : Beyond Console.log() – Level up Your Debugging Skills</title><link>https://example.com/post/console-log/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/console-log/</guid><description>&lt;p>Différentes techniques de débogage pour améliorer les compétences de développement en JavaScript.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;Beyond console.log: Level Up Your Debugging Skills&amp;rdquo; vise à aider les développeurs à améliorer leurs compétences de débogage en JavaScript. Il explique comment utiliser des outils tels que la console JavaScript, les déclarations de breakpoints, les outils de débogage de navigateur, les outils de débogage de réseau, les outils de débogage de performance et les outils de débogage de source pour résoudre les erreurs et optimiser le code.&lt;/p>
+&lt;p>La console JavaScript est un outil puissant qui permet de loguer des informations dans la console du navigateur. Il permet de loguer des messages, des objets, des tableaux, etc. Les déclarations de breakpoints permettent de mettre en pause l&amp;rsquo;exécution du code à un endroit spécifique pour pouvoir inspecter les variables et les propriétés de l&amp;rsquo;objet. Les outils de débogage de navigateur sont intégrés à la plupart des navigateurs modernes et permettent de déboguer le code JavaScript, d&amp;rsquo;inspecter les éléments HTML et CSS, de visualiser les requêtes réseau et de mesurer les performances.&lt;/p>
+&lt;p>&lt;a href="https://www.sitepoint.com/beyond-console-log-level-up-your-debugging-skills/">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="ce-que-jai-découvert" >Ce que j&amp;rsquo;ai découvert
+&lt;span>
+&lt;a href="#ce-que-jai-d%c3%a9couvert">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Comme beaucoup de monde, je n&amp;rsquo;utilise partiquement que la simple commande &lt;code>console.log()&lt;/code>. Cet article met alors en lumière toutes les autres fonctions de la console. La partie sur &lt;code>console.time()&lt;/code> m&amp;rsquo;était inconnue et est utile dans nombreux projets.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">time&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;go&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">for&lt;/span>(&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">200000&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) {
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">x&lt;/span> &lt;span style="color:#f92672">=&lt;/span> Math.&lt;span style="color:#a6e22e">random&lt;/span>()&lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#ae81ff">2000&lt;/span>;
+}
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">timeEnd&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;go&amp;#39;&lt;/span>); &lt;span style="color:#75715e">// go: 11.7861328125 ms
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Dans tous mes futurs projets, cet article me sera utile lors de la partie de débogage. Celui-ci me permettra de mieux structurer mes commandes console et ainsi optimiser la recherche de bugs éventuels dans mes développment.&lt;/p></description></item><item><title>Article : VS Code Shortcuts To Code Like You're Playing a Piano</title><link>https://example.com/post/shortcut-vs/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/shortcut-vs/</guid><description>&lt;p>Les raccourcis clavier de VS Code qui peuvent aider les développeurs à coder plus rapidement et efficacement, en utilisant une analogie avec la pratique du piano.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;VS Code Shortcuts to Code Like You&amp;rsquo;re Playing a Piano&amp;rdquo; met en avant l&amp;rsquo;importance des raccourcis clavier pour augmenter la productivité des développeurs. Il utilise une analogie avec la pratique du piano pour expliquer comment les raccourcis clavier permettent de coder de manière plus rapide et efficace. Il donne des exemples de raccourcis clavier couramment utilisés pour les tâches courantes comme la navigation dans le code, la modification du code, la recherche et la sélection. Il explique que les raccourcis clavier peuvent également être personnalisés pour s&amp;rsquo;adapter aux besoins spécifiques de chaque développeur. Il insiste sur l&amp;rsquo;importance de pratiquer ces raccourcis clavier pour en maîtriser l&amp;rsquo;utilisation, de la même manière qu&amp;rsquo;un musicien doit pratiquer pour maîtriser son instrument. Il conclut en disant que les raccourcis clavier sont un outil puissant pour augmenter la productivité des développeurs et qu&amp;rsquo;ils devraient être utilisés de manière régulière pour améliorer les compétences de codage.&lt;/p>
+&lt;p>&lt;a href="https://dev.to/aziznal/vs-code-shortcuts-to-code-like-youre-playing-a-piano-50ab">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="3-raccourcis-importants" >3 raccourcis importants
+&lt;span>
+&lt;a href="#3-raccourcis-importants">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="curseurs-mulitples" >Curseurs mulitples
+&lt;span>
+&lt;a href="#curseurs-mulitples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Créez rapidement plusieurs curseurs pour modifier plusieurs sections de code.&lt;/p>
+&lt;ul>
+&lt;li>Windows: &lt;code>Ctrl + Alt + Arrow Up / Arrow Down&lt;/code>&lt;/li>
+&lt;li>Mac: &lt;code>Cmd + Opt + Arrow Up / Arrow Down&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://res.cloudinary.com/practicaldev/image/fetch/s--sQQ5PIps--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p0692xyb16maj585egls.gif" alt="Curseurs mulitples gif">&lt;/p>
+&lt;h3 id="déplacement-mot-à-mot" >Déplacement mot-à-mot
+&lt;span>
+&lt;a href="#d%c3%a9placement-mot-%c3%a0-mot">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Déplacez votre curseur mot par mot plutôt que caractère par caractère.&lt;/p>
+&lt;ul>
+&lt;li>Windows: &lt;code>Ctrl + Left Arrow / Right Arrow&lt;/code>&lt;/li>
+&lt;li>Mac: &lt;code>Opt + Left Arrow / Right Arrow&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ju7Qs43q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o2tuyb8u72pdglq6datw.gif" alt="Déplacement mot-à-mot gif">&lt;/p>
+&lt;h3 id="affichage-du-terminal" >Affichage du terminal
+&lt;span>
+&lt;a href="#affichage-du-terminal">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Basculer le focus / la visibilité du terminal et replacer le focus sur votre code.&lt;/p>
+&lt;ul>
+&lt;li>Windows: &lt;code>Ctrl + J&lt;/code> pour le terminal, &lt;code>Ctrl + 1&lt;/code> pour le code&lt;/li>
+&lt;li>Mac: &lt;code>Cmd + J&lt;/code> pour le terminal, &lt;code>Cmd + 1&lt;/code> pour le code&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NjqQyfSN--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w81p55qdw7waa10stzld.gif" alt="Affichage du terminal gif">&lt;/p>
+&lt;h2 id="ce-quil-faut-retenir" >Ce qu&amp;rsquo;il faut retenir
+&lt;span>
+&lt;a href="#ce-quil-faut-retenir">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Tous ces raccoucis sont très utiles pour optimiser l&amp;rsquo;écriture de code, certains sont cependant plus spécifiques que d&amp;rsquo;autres, par exemple les &lt;em>curseurs mulitples&lt;/em>. Il faudra alors un temps d&amp;rsquo;apprentissage avant des les utiliser de manière naturelle.&lt;/p>
+&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Une fois leur apprentissage terminé, ces raccourcis me seront très utiles dans n&amp;rsquo;importe quel projets futurs.&lt;/p></description></item><item><title>Article : Writing Cleaner JavaScript with Modules</title><link>https://example.com/post/js-module/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/js-module/</guid><description>&lt;p>Comment les modules permettent de séparer le code en différentes sections logiques, de réduire les risques de conflits de nom et de faciliter la réutilisation de code.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;Writing Cleaner JavaScript with Modules&amp;rdquo; explique comment l&amp;rsquo;utilisation des modules en JavaScript peut aider à écrire du code plus propre et plus organisé. Les modules permettent de séparer le code en sections logiques distinctes, réduisent les risques de conflits de nom et facilitent la réutilisation de code. Il décrit les différentes options disponibles pour utiliser les modules en JavaScript, tels que CommonJS, AMD et ECMAScript 6. Il donne des exemples concrets pour montrer comment utiliser les modules pour améliorer la qualité du code. Il insiste sur l&amp;rsquo;importance d&amp;rsquo;utiliser les modules pour écrire un code plus propre et plus maintenable. Il mentionne que les modules permettent de rendre le code plus facile à lire et à comprendre en permettant de découper les fonctionnalités en morceaux plus petits et plus gérables. Il conclut en disant que les modules sont un outil essentiel pour écrire du code JavaScript plus propre et plus facile à maintenir. Il encourage les développeurs à utiliser les modules pour écrire du code de meilleure qualité.&lt;/p>
+&lt;p>&lt;a href="https://dev.to/honeybadger/writing-cleaner-javascript-with-modules-an">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="ce-quil-faut-retenir" >Ce qu&amp;rsquo;il faut retenir
+&lt;span>
+&lt;a href="#ce-quil-faut-retenir">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les modules sont des outils puissants lors du développement. Dans une grande majorité de projets, leur utilisation permettra de mieux structurer le code afin que celui-ci soit plus facile d&amp;rsquo;utilisation et propre.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#75715e">// user sign in
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">userSignIn&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;User signed in&amp;#34;&lt;/span>);
+}
+&lt;span style="color:#75715e">// user sign out
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">userSignOut&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;User signed out&amp;#34;&lt;/span>);
+}
+&lt;span style="color:#75715e">// delete task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">deleteTask&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> deleted`&lt;/span>);
+}
+&lt;span style="color:#75715e">//add task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">addTask&lt;/span>(&lt;span style="color:#a6e22e">task&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">task&lt;/span>.&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> added`&lt;/span>);
+}
+&lt;span style="color:#75715e">//edit task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">editTask&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>, &lt;span style="color:#a6e22e">changes&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> edited`&lt;/span>);
+}
+&lt;span style="color:#75715e">//complete task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">completeTask&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> completed`&lt;/span>);
+}
+&lt;span style="color:#66d9ef">export&lt;/span> {
+&lt;span style="color:#a6e22e">userSignIn&lt;/span>,
+&lt;span style="color:#a6e22e">userSignOut&lt;/span>,
+&lt;span style="color:#a6e22e">deleteTask&lt;/span>,
+&lt;span style="color:#a6e22e">addTask&lt;/span>,
+&lt;span style="color:#a6e22e">editTask&lt;/span>,
+&lt;span style="color:#a6e22e">completeTask&lt;/span>
+};
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Cet article détaille précisément l&amp;rsquo;utilisation des modules avec des exemples concrets. L&amp;rsquo;article me sera alors très utile dans de nombreux projets futurs afin de rendre mon code plus structuré et lisible.&lt;/p></description></item><item><title>Expérimentation : ElectronJS</title><link>https://example.com/post/electron/</link><pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/electron/</guid><description>&lt;p>Test de ElectronJS, un cadre open-source qui permet de créer des applications de bureau multiplateformes en utilisant JavaScript, HTML et CSS. Il est basé sur le moteur Chromium de Google et Node.js, et permet aux développeurs de construire des applications qui fonctionnent sur Windows, Mac et Linux en utilisant une seule base de code. Il est utilisé pour créer des applications de bureau telles que Visual Studio Code, Slack et Discord.&lt;/p>
+&lt;p>&lt;a href="https://www.electronjs.org/docs/latest/">Lien vers la documentation&lt;/a>&lt;/p>
+&lt;h2 id="comment-linstaller-" >Comment l&amp;rsquo;installer ?
+&lt;span>
+&lt;a href="#comment-linstaller-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>ElectronJS peut s&amp;rsquo;installer simplmenent sur n&amp;rsquo;importe quel projets utilisant NodeJS.&lt;/p>
+&lt;pre tabindex="0">&lt;code>npm install --save-dev electron
+&lt;/code>&lt;/pre>&lt;h2 id="utilisation" >Utilisation
+&lt;span>
+&lt;a href="#utilisation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Pour cette expérimentation, j&amp;rsquo;ai créé une simple application TO-DO avec une fonctionalité d&amp;rsquo;ajout à la liste. Une fois cette application fait, il n&amp;rsquo;y a qu&amp;rsquo;à ajouté le package electron et l&amp;rsquo;ajouter au script de démarrage :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#e6db74">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;span style="color:#f92672">&amp;#34;start&amp;#34;&lt;/span> : &lt;span style="color:#e6db74">&amp;#34;electron .&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;test&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;echo \&amp;#34;Error: no test specified\&amp;#34; &amp;amp;&amp;amp; exit 1&amp;#34;&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nous devons ensuite configurer le fichier &lt;code>main.js&lt;/code> du projet afin de définir les options basiques d&amp;rsquo;Electron, comme par exemple la taille de la fenêtre ou le fichier à load lors du démarrage de l&amp;rsquo;application.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">app&lt;/span>, &lt;span style="color:#a6e22e">BrowserWindow&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;electron&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;path&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">loadMainWindow&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">mainWindow&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">BrowserWindow&lt;/span>({
+&lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1200&lt;/span>,
+&lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">800&lt;/span>,
+&lt;span style="color:#a6e22e">webPreferences&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">nodeIntegration&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+}
+});
+&lt;span style="color:#a6e22e">mainWindow&lt;/span>.&lt;span style="color:#a6e22e">loadFile&lt;/span>(&lt;span style="color:#a6e22e">path&lt;/span>.&lt;span style="color:#a6e22e">join&lt;/span>(&lt;span style="color:#a6e22e">__dirname&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;index.html&amp;#34;&lt;/span>));
+}
+&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">on&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ready&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">loadMainWindow&lt;/span>);
+&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">on&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;window-all-closed&amp;#34;&lt;/span>, () =&amp;gt; {
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">process&lt;/span>.&lt;span style="color:#a6e22e">platform&lt;/span> &lt;span style="color:#f92672">!==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;darwin&amp;#34;&lt;/span>) {
+&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">quit&lt;/span>();
+}
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="notifications" >Notifications
+&lt;span>
+&lt;a href="#notifications">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Comme dit précedemment, Electron permet d&amp;rsquo;utiliser des fonctionnalités propres aux applications desktop. J&amp;rsquo;ai alors décidé d&amp;rsquo;implémenter un système de notifications à la TODO-list lors de l&amp;rsquo;ajout de tâche.&lt;/p>
+&lt;p>Pour cela rien de plus simple. Il faut commencer par prévoir les notifications dans &lt;code>main.js&lt;/code> en ajoutant les lignes suivants :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">Notification&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;electron&amp;#34;&lt;/span>);
+&lt;span style="color:#a6e22e">ipcMain&lt;/span>.&lt;span style="color:#a6e22e">handle&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;show-notification&amp;#39;&lt;/span>, (&lt;span style="color:#a6e22e">event&lt;/span>, ...&lt;span style="color:#a6e22e">args&lt;/span>) =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">notification&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;New Task&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">body&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">`Added: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">args&lt;/span>[&lt;span style="color:#ae81ff">0&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>
+}
+&lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Notification&lt;/span>(&lt;span style="color:#a6e22e">notification&lt;/span>).&lt;span style="color:#a6e22e">show&lt;/span>()
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Il faut ensuite créer la notification lors de l&amp;rsquo;ajout d&amp;rsquo;une tâche. Notre &lt;code>script.js&lt;/code> gérant l&amp;rsquo;ajout de tâche ressemblera donc à ceci :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">ipcRenderer&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;electron&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">list&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;list&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">newTask&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;newTask&amp;#34;&lt;/span>);
+document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;addTask&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">addEventListener&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;click&amp;#39;&lt;/span>, () =&amp;gt; {
+&lt;span style="color:#a6e22e">list&lt;/span>.&lt;span style="color:#a6e22e">insertAdjacentHTML&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;beforeend&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">`&amp;lt;li class=&amp;#34;list-group-item&amp;#34;&amp;gt;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">newTask&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;lt;/li&amp;gt;`&lt;/span>)
+&lt;span style="color:#a6e22e">ipcRenderer&lt;/span>.&lt;span style="color:#a6e22e">invoke&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;show-notification&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">newTask&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>);
+&lt;span style="color:#a6e22e">newTask&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>;
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="résultat" >Résultat
+&lt;span>
+&lt;a href="#r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="../ElectronNotification.png" alt="Notification Electron">&lt;/p>
+&lt;h2 id="ce-que-jai-retenu" >Ce que j&amp;rsquo;ai retenu
+&lt;span>
+&lt;a href="#ce-que-jai-retenu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>J&amp;rsquo;avais déjà pu utiliser Electron pour des projets personels et professionels. Dans le domaine professionel, ce package m&amp;rsquo;a permis de fournir une application à des clients afin de leur simplifier l&amp;rsquo;utilisation de l&amp;rsquo;application développée.&lt;/p>
+&lt;p>Electron est très complet et propose de nombreuses fonctionalité d&amp;rsquo;application desktop (ex.: Les notifications), je pense donc pouvoir le réutiliser dans mon avenir professionnel.&lt;/p></description></item><item><title>Article : The illusion of speed – why perceived performance matters</title><link>https://example.com/post/illusion-speed/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/illusion-speed/</guid><description>&lt;p>L&amp;rsquo;importance de la performance perçue pour les utilisateurs d&amp;rsquo;une application ou d&amp;rsquo;un site web. Il explique que même si une application est rapide sur le plan technique, si l&amp;rsquo;utilisateur ne le ressent pas, il pourrait avoir une mauvaise expérience utilisateur.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;The illusion of speed: Why perceived performance matters&amp;rdquo; décrit comment la performance perçue par l&amp;rsquo;utilisateur est tout aussi importante que la performance technique. Il explique que même si une application fonctionne rapidement sur le plan technique, cela ne signifie pas que l&amp;rsquo;utilisateur en a une perception de rapidité. Il présente des techniques pour améliorer la performance perçue tels que la mise en cache, la réduction du nombre de requêtes et la minimisation du temps de chargement pour améliorer l&amp;rsquo;expérience utilisateur. Il souligne également que les performances perçues sont de plus en plus importantes avec la croissance de l&amp;rsquo;utilisation des appareils mobiles et l&amp;rsquo;augmentation de la concurrence pour les utilisateurs.&lt;/p>
+&lt;p>&lt;a href="https://dev.to/enterspeed/the-illusion-of-speed-why-perceived-performance-matters-f38">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="la-partie-étonnante" >La partie étonnante
+&lt;span>
+&lt;a href="#la-partie-%c3%a9tonnante">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>As we saw, people on average overestimate the passive state by 36%. If we have a page that takes 4 seconds to load, the user will actually experience this as 5 seconds (25% slower than it really is).&lt;/p>
+&lt;/blockquote>
+&lt;p>Il est expliqué que lorsque les visiteurs d&amp;rsquo;un site sont en mode passif, c&amp;rsquo;est-à-dire dans l&amp;rsquo;attente, le temps d&amp;rsquo;attente lui paraît 36% plus grand que ce qu&amp;rsquo;il est réellement (par exemple en temps d&amp;rsquo;attente de 4 secondes en mode passif sera perçu comme 5 secondes par l&amp;rsquo;utilisateur).&lt;/p>
+&lt;blockquote>
+&lt;p>The first second is in the active state, but in the next three seconds, the user risks moving to the passive state, which they then will experience as 4.08 seconds (3*1.36), which will result in a total perceived load time of 5 seconds (1 + 4.08).&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="ce-quil-faut-retenir" >Ce qu&amp;rsquo;il faut retenir
+&lt;span>
+&lt;a href="#ce-quil-faut-retenir">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Lors de la conception d&amp;rsquo;application ou de site web, il faut toujours garder à l&amp;rsquo;esprit que même si celui-ci est performant sur le plan technique, l&amp;rsquo;utilisateur peut entrer dans un état d&amp;rsquo;attente. Il faut alors prévoir une solution afin de ne pas le perdre lors du processus d&amp;rsquo;attente.&lt;/p>
+&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les solutions proposées par cet article me seront utiles dans tous mes futurs projets web, dès lors qu&amp;rsquo;une phase de chargement sera à prévoir.&lt;/p></description></item><item><title/><link>https://example.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://example.com/archives/</guid><description/></item><item><title>Markdown Syntax Guide</title><link>https://example.com/post/markdown-syntax/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/post/markdown-syntax/</guid><description>&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;h2 id="headings" >Headings
+&lt;span>
+&lt;a href="#headings">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
+&lt;h1 id="h1" >H1
+&lt;span>
+&lt;a href="#h1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;h2 id="h2" >H2
+&lt;span>
+&lt;a href="#h2">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="h3" >H3
+&lt;span>
+&lt;a href="#h3">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="h4" >H4
+&lt;span>
+&lt;a href="#h4">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;h5 id="h5" >H5
+&lt;span>
+&lt;a href="#h5">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h5>&lt;h6 id="h6" >H6
+&lt;span>
+&lt;a href="#h6">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h6>&lt;h2 id="paragraph" >Paragraph
+&lt;span>
+&lt;a href="#paragraph">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p>
+&lt;p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p>
+&lt;h2 id="blockquotes" >Blockquotes
+&lt;span>
+&lt;a href="#blockquotes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code>footer&lt;/code> or &lt;code>cite&lt;/code> element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p>
+&lt;h4 id="blockquote-without-attribution" >Blockquote without attribution
+&lt;span>
+&lt;a href="#blockquote-without-attribution">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&lt;strong>Note&lt;/strong> that you can use &lt;em>Markdown syntax&lt;/em> within a blockquote.&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="blockquote-with-attribution" >Blockquote with attribution
+&lt;span>
+&lt;a href="#blockquote-with-attribution">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;blockquote>
+&lt;p>Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;!-- raw HTML omitted -->
+— &lt;!-- raw HTML omitted -->Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="tables" >Tables
+&lt;span>
+&lt;a href="#tables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="inline-markdown-within-tables" >Inline Markdown within tables
+&lt;span>
+&lt;a href="#inline-markdown-within-tables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Inline   &lt;/th>
+&lt;th>Markdown   &lt;/th>
+&lt;th>In   &lt;/th>
+&lt;th>Table&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;del>strikethrough&lt;/del>   &lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="code-blocks" >Code Blocks
+&lt;span>
+&lt;a href="#code-blocks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h4 id="code-block-with-backticks" >Code block with backticks
+&lt;span>
+&lt;a href="#code-block-with-backticks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;Test&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="code-block-indented-with-four-spaces" >Code block indented with four spaces
+&lt;span>
+&lt;a href="#code-block-indented-with-four-spaces">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h4 id="code-block-with-hugos-internal-highlight-shortcode" >Code block with Hugo&amp;rsquo;s internal highlight shortcode
+&lt;span>
+&lt;a href="#code-block-with-hugos-internal-highlight-shortcode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;Test&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="list-types" >List Types
+&lt;span>
+&lt;a href="#list-types">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h4 id="ordered-list" >Ordered List
+&lt;span>
+&lt;a href="#ordered-list">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;h4 id="unordered-list" >Unordered List
+&lt;span>
+&lt;a href="#unordered-list">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h4 id="nested-list" >Nested list
+&lt;span>
+&lt;a href="#nested-list">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Item&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>First Sub-item&lt;/li>
+&lt;li>Second Sub-item&lt;/li>
+&lt;/ol>
+&lt;h2 id="other-elements--abbr-sub-sup-kbd-mark" >Other Elements — abbr, sub, sup, kbd, mark
+&lt;span>
+&lt;a href="#other-elements--abbr-sub-sup-kbd-mark">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;!-- raw HTML omitted -->GIF&lt;!-- raw HTML omitted --> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;!-- raw HTML omitted -->2&lt;!-- raw HTML omitted -->O&lt;/p>
+&lt;p>X&lt;!-- raw HTML omitted -->n&lt;!-- raw HTML omitted --> + Y&lt;!-- raw HTML omitted -->n&lt;!-- raw HTML omitted --> = Z&lt;!-- raw HTML omitted -->n&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>Press &lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->CTRL&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->ALT&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->Delete&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted --> to end the session.&lt;/p>
+&lt;p>Most &lt;!-- raw HTML omitted -->salamanders&lt;!-- raw HTML omitted --> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>Rich Content</title><link>https://example.com/post/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/post/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes">Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a href="https://gohugo.io/about/hugo-and-gdpr/">Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
+&lt;hr>
+&lt;h2 id="youtube-privacy-enhanced-shortcode" >YouTube Privacy Enhanced Shortcode
+&lt;span>
+&lt;a href="#youtube-privacy-enhanced-shortcode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/ZJthWmvUzzc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;!-- raw HTML omitted -->
+&lt;hr>
+&lt;h2 id="twitter-simple-shortcode" >Twitter Simple Shortcode
+&lt;span>
+&lt;a href="#twitter-simple-shortcode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">“In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”&lt;br>— Jan Tschichold &lt;a href="https://t.co/gcv7SrhvJb">pic.twitter.com/gcv7SrhvJb&lt;/a>&lt;/p>&amp;mdash; Graphic Design History (@DesignReviewed) &lt;a href="https://twitter.com/DesignReviewed/status/1085870671291310081?ref_src=twsrc%5Etfw">January 17, 2019&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;!-- raw HTML omitted -->
+&lt;hr>
+&lt;h2 id="vimeo-simple-shortcode" >Vimeo Simple Shortcode
+&lt;span>
+&lt;a href="#vimeo-simple-shortcode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;style>
+.__h_video {
+position: relative;
+padding-bottom: 56.23%;
+height: 0;
+overflow: hidden;
+width: 100%;
+background: #000;
+}
+.__h_video img {
+width: 100%;
+height: auto;
+color: #000;
+}
+.__h_video .play {
+height: 72px;
+width: 72px;
+left: 50%;
+top: 50%;
+margin-left: -36px;
+margin-top: -36px;
+position: absolute;
+cursor: pointer;
+}
+&lt;/style>
+&lt;div class="s_video_simple __h_video">
+&lt;a href="https://vimeo.com/4.8912912e&amp;#43;07" rel="noopener" target="_blank">
+&lt;img src="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640" srcset="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 1x, https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 2x" alt="Sing Jan Swing - Kinetic Type">
+&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div></description></item><item><title>Placeholder Text</title><link>https://example.com/post/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/post/placeholder-text/</guid><description>&lt;p>Lorem est tota propiore conpellat pectoribus de
+pectora summo. Redit teque digerit hominumque toris verebor lumina non cervice
+subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc
+caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis
+lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
+&lt;ol>
+&lt;li>Exierant elisi ambit vivere dedere&lt;/li>
+&lt;li>Duce pollice&lt;/li>
+&lt;li>Eris modo&lt;/li>
+&lt;li>Spargitque ferrea quos palude&lt;/li>
+&lt;/ol>
+&lt;p>Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus
+silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria
+tractus malis.&lt;/p>
+&lt;ol>
+&lt;li>Comas hunc haec pietate fetum procerum dixit&lt;/li>
+&lt;li>Post torum vates letum Tiresia&lt;/li>
+&lt;li>Flumen querellas&lt;/li>
+&lt;li>Arcanaque montibus omnes&lt;/li>
+&lt;li>Quidem et&lt;/li>
+&lt;/ol>
+&lt;h1 id="vagus-elidunt" >Vagus elidunt
+&lt;span>
+&lt;a href="#vagus-elidunt">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon">The Van de Graaf Canon&lt;/a>&lt;/p>
+&lt;h2 id="mane-refeci-capiebant-unda-mulcebat" >Mane refeci capiebant unda mulcebat
+&lt;span>
+&lt;a href="#mane-refeci-capiebant-unda-mulcebat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Victa caducifer, malo vulnere contra
+dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere
+furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong>Faces illo pepulere&lt;/strong> tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p>
+&lt;p>Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli
+Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare
+Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert
+ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae
+vulnus haerentia iuste et exercebat, sui et.&lt;/p>
+&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem
+Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Math Typesetting</title><link>https://example.com/post/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/post/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
+&lt;p>In this example we will be using &lt;a href="https://katex.org/">KaTeX&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Create a partial under &lt;code>/layouts/partials/math.html&lt;/code>&lt;/li>
+&lt;li>Within this partial reference the &lt;a href="https://katex.org/docs/autorender.html">Auto-render Extension&lt;/a> or host these scripts locally.&lt;/li>
+&lt;li>Include the partial in your templates like so:&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>{{ if or .Params.math .Site.Params.math }}
+{{ partial &amp;quot;math.html&amp;quot; . }}
+{{ end }}
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>To enable KaTex globally set the parameter &lt;code>math&lt;/code> to &lt;code>true&lt;/code> in a project&amp;rsquo;s configuration&lt;/li>
+&lt;li>To enable KaTex on a per page basis include the parameter &lt;code>math: true&lt;/code> in content files.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Note:&lt;/strong> Use the online reference of &lt;a href="https://katex.org/docs/supported.html">Supported TeX Functions&lt;/a>
+&lt;/p>
+&lt;h3 id="examples" >Examples
+&lt;span>
+&lt;a href="#examples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Inline math: $$ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $$&lt;/p>
+&lt;p>Block math:&lt;/p>
+&lt;p>$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$&lt;/p></description></item><item><title>Emoji Support</title><link>https://example.com/post/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://example.com/post/emoji-support/</guid><description>&lt;p>Emoji can be enabled in a Hugo project in a number of ways.&lt;/p>
+&lt;p>The &lt;a href="https://gohugo.io/functions/emojify/">&lt;code>emojify&lt;/code>&lt;/a> function can be called directly in templates or &lt;a href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes">Inline Shortcodes&lt;/a>.&lt;/p>
+&lt;p>To enable emoji globally, set &lt;code>enableEmoji&lt;/code> to &lt;code>true&lt;/code> in your site’s &lt;a href="https://gohugo.io/getting-started/configuration/">configuration&lt;/a> and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>The &lt;a href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet&lt;/a> is a useful reference for emoji shorthand codes.&lt;/p>
+&lt;hr>
+&lt;p>&lt;strong>N.B.&lt;/strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">.emoji {
+font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols;
+}&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;p>Written in Go, Hugo is an open source static site generator available under the &lt;a href="https://github.com/gohugoio/hugo/blob/master/LICENSE">Apache Licence 2.0.&lt;/a> Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p>
+&lt;p>Hugo makes use of a variety of open source projects including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/yuin/goldmark">https://github.com/yuin/goldmark&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/alecthomas/chroma">https://github.com/alecthomas/chroma&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/muesli/smartcrop">https://github.com/muesli/smartcrop&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spf13/cobra">https://github.com/spf13/cobra&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/spf13/viper">https://github.com/spf13/viper&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p>
+&lt;p>Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p>
+&lt;p>Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p>
+&lt;p>Learn more and contribute on &lt;a href="https://github.com/gohugoio">GitHub&lt;/a>.&lt;/p></description></item><item><title>About subpage</title><link>https://example.com/about/subpage/</link><pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate><guid>https://example.com/about/subpage/</guid><description>&lt;p>About subpage&lt;/p></description></item><item><title>Second About subpage</title><link>https://example.com/about/subpage2/</link><pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate><guid>https://example.com/about/subpage2/</guid><description>&lt;p>Second About subpage&lt;/p></description></item></channel></rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>performence on LabVeilleTech - Paul</title><link>https://example.com/tags/performence/</link><description>LabVeilleTech - Paul (performence)</description><generator>Hugo -- gohugo.io</generator><language>fr-CH</language><lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/performence/index.xml" rel="self" type="application/rss+xml"/><item><title>Article : The illusion of speed – why perceived performance matters</title><link>https://example.com/post/illusion-speed/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/illusion-speed/</guid><description>&lt;p>L&amp;rsquo;importance de la performance perçue pour les utilisateurs d&amp;rsquo;une application ou d&amp;rsquo;un site web. Il explique que même si une application est rapide sur le plan technique, si l&amp;rsquo;utilisateur ne le ressent pas, il pourrait avoir une mauvaise expérience utilisateur.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;The illusion of speed: Why perceived performance matters&amp;rdquo; décrit comment la performance perçue par l&amp;rsquo;utilisateur est tout aussi importante que la performance technique. Il explique que même si une application fonctionne rapidement sur le plan technique, cela ne signifie pas que l&amp;rsquo;utilisateur en a une perception de rapidité. Il présente des techniques pour améliorer la performance perçue tels que la mise en cache, la réduction du nombre de requêtes et la minimisation du temps de chargement pour améliorer l&amp;rsquo;expérience utilisateur. Il souligne également que les performances perçues sont de plus en plus importantes avec la croissance de l&amp;rsquo;utilisation des appareils mobiles et l&amp;rsquo;augmentation de la concurrence pour les utilisateurs.&lt;/p>
+&lt;p>&lt;a href="https://dev.to/enterspeed/the-illusion-of-speed-why-perceived-performance-matters-f38">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="la-partie-étonnante" >La partie étonnante
+&lt;span>
+&lt;a href="#la-partie-%c3%a9tonnante">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>As we saw, people on average overestimate the passive state by 36%. If we have a page that takes 4 seconds to load, the user will actually experience this as 5 seconds (25% slower than it really is).&lt;/p>
+&lt;/blockquote>
+&lt;p>Il est expliqué que lorsque les visiteurs d&amp;rsquo;un site sont en mode passif, c&amp;rsquo;est-à-dire dans l&amp;rsquo;attente, le temps d&amp;rsquo;attente lui paraît 36% plus grand que ce qu&amp;rsquo;il est réellement (par exemple en temps d&amp;rsquo;attente de 4 secondes en mode passif sera perçu comme 5 secondes par l&amp;rsquo;utilisateur).&lt;/p>
+&lt;blockquote>
+&lt;p>The first second is in the active state, but in the next three seconds, the user risks moving to the passive state, which they then will experience as 4.08 seconds (3*1.36), which will result in a total perceived load time of 5 seconds (1 + 4.08).&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="ce-quil-faut-retenir" >Ce qu&amp;rsquo;il faut retenir
+&lt;span>
+&lt;a href="#ce-quil-faut-retenir">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Lors de la conception d&amp;rsquo;application ou de site web, il faut toujours garder à l&amp;rsquo;esprit que même si celui-ci est performant sur le plan technique, l&amp;rsquo;utilisateur peut entrer dans un état d&amp;rsquo;attente. Il faut alors prévoir une solution afin de ne pas le perdre lors du processus d&amp;rsquo;attente.&lt;/p>
+&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les solutions proposées par cet article me seront utiles dans tous mes futurs projets web, dès lors qu&amp;rsquo;une phase de chargement sera à prévoir.&lt;/p></description></item></channel></rss>

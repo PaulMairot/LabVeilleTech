@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>js on LabVeilleTech - Paul</title><link>https://example.com/tags/js/</link><description>LabVeilleTech - Paul (js)</description><generator>Hugo -- gohugo.io</generator><language>fr-CH</language><lastBuildDate>Fri, 13 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/js/index.xml" rel="self" type="application/rss+xml"/><item><title>Expérimentation : ElectronJS</title><link>https://example.com/post/electron/</link><pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/electron/</guid><description>&lt;p>Test de ElectronJS, un cadre open-source qui permet de créer des applications de bureau multiplateformes en utilisant JavaScript, HTML et CSS. Il est basé sur le moteur Chromium de Google et Node.js, et permet aux développeurs de construire des applications qui fonctionnent sur Windows, Mac et Linux en utilisant une seule base de code. Il est utilisé pour créer des applications de bureau telles que Visual Studio Code, Slack et Discord.&lt;/p>
+&lt;p>&lt;a href="https://www.electronjs.org/docs/latest/">Lien vers la documentation&lt;/a>&lt;/p>
+&lt;h2 id="comment-linstaller-" >Comment l&amp;rsquo;installer ?
+&lt;span>
+&lt;a href="#comment-linstaller-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>ElectronJS peut s&amp;rsquo;installer simplmenent sur n&amp;rsquo;importe quel projets utilisant NodeJS.&lt;/p>
+&lt;pre tabindex="0">&lt;code>npm install --save-dev electron
+&lt;/code>&lt;/pre>&lt;h2 id="utilisation" >Utilisation
+&lt;span>
+&lt;a href="#utilisation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Pour cette expérimentation, j&amp;rsquo;ai créé une simple application TO-DO avec une fonctionalité d&amp;rsquo;ajout à la liste. Une fois cette application fait, il n&amp;rsquo;y a qu&amp;rsquo;à ajouté le package electron et l&amp;rsquo;ajouter au script de démarrage :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#e6db74">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;span style="color:#f92672">&amp;#34;start&amp;#34;&lt;/span> : &lt;span style="color:#e6db74">&amp;#34;electron .&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;test&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;echo \&amp;#34;Error: no test specified\&amp;#34; &amp;amp;&amp;amp; exit 1&amp;#34;&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nous devons ensuite configurer le fichier &lt;code>main.js&lt;/code> du projet afin de définir les options basiques d&amp;rsquo;Electron, comme par exemple la taille de la fenêtre ou le fichier à load lors du démarrage de l&amp;rsquo;application.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">app&lt;/span>, &lt;span style="color:#a6e22e">BrowserWindow&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;electron&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">path&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;path&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">loadMainWindow&lt;/span> &lt;span style="color:#f92672">=&lt;/span> () =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">mainWindow&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">BrowserWindow&lt;/span>({
+&lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">1200&lt;/span>,
+&lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">800&lt;/span>,
+&lt;span style="color:#a6e22e">webPreferences&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;span style="color:#a6e22e">nodeIntegration&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+}
+});
+&lt;span style="color:#a6e22e">mainWindow&lt;/span>.&lt;span style="color:#a6e22e">loadFile&lt;/span>(&lt;span style="color:#a6e22e">path&lt;/span>.&lt;span style="color:#a6e22e">join&lt;/span>(&lt;span style="color:#a6e22e">__dirname&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;index.html&amp;#34;&lt;/span>));
+}
+&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">on&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ready&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">loadMainWindow&lt;/span>);
+&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">on&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;window-all-closed&amp;#34;&lt;/span>, () =&amp;gt; {
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">process&lt;/span>.&lt;span style="color:#a6e22e">platform&lt;/span> &lt;span style="color:#f92672">!==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;darwin&amp;#34;&lt;/span>) {
+&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">quit&lt;/span>();
+}
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="notifications" >Notifications
+&lt;span>
+&lt;a href="#notifications">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Comme dit précedemment, Electron permet d&amp;rsquo;utiliser des fonctionnalités propres aux applications desktop. J&amp;rsquo;ai alors décidé d&amp;rsquo;implémenter un système de notifications à la TODO-list lors de l&amp;rsquo;ajout de tâche.&lt;/p>
+&lt;p>Pour cela rien de plus simple. Il faut commencer par prévoir les notifications dans &lt;code>main.js&lt;/code> en ajoutant les lignes suivants :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">Notification&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;electron&amp;#34;&lt;/span>);
+&lt;span style="color:#a6e22e">ipcMain&lt;/span>.&lt;span style="color:#a6e22e">handle&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;show-notification&amp;#39;&lt;/span>, (&lt;span style="color:#a6e22e">event&lt;/span>, ...&lt;span style="color:#a6e22e">args&lt;/span>) =&amp;gt; {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">notification&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;New Task&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">body&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">`Added: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">args&lt;/span>[&lt;span style="color:#ae81ff">0&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>
+}
+&lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Notification&lt;/span>(&lt;span style="color:#a6e22e">notification&lt;/span>).&lt;span style="color:#a6e22e">show&lt;/span>()
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Il faut ensuite créer la notification lors de l&amp;rsquo;ajout d&amp;rsquo;une tâche. Notre &lt;code>script.js&lt;/code> gérant l&amp;rsquo;ajout de tâche ressemblera donc à ceci :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> { &lt;span style="color:#a6e22e">ipcRenderer&lt;/span> } &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">require&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;electron&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">list&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;list&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">newTask&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;newTask&amp;#34;&lt;/span>);
+document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;addTask&amp;#34;&lt;/span>).&lt;span style="color:#a6e22e">addEventListener&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;click&amp;#39;&lt;/span>, () =&amp;gt; {
+&lt;span style="color:#a6e22e">list&lt;/span>.&lt;span style="color:#a6e22e">insertAdjacentHTML&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;beforeend&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">`&amp;lt;li class=&amp;#34;list-group-item&amp;#34;&amp;gt;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">newTask&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;lt;/li&amp;gt;`&lt;/span>)
+&lt;span style="color:#a6e22e">ipcRenderer&lt;/span>.&lt;span style="color:#a6e22e">invoke&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;show-notification&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">newTask&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>);
+&lt;span style="color:#a6e22e">newTask&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>;
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="résultat" >Résultat
+&lt;span>
+&lt;a href="#r%c3%a9sultat">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;img src="../ElectronNotification.png" alt="Notification Electron">&lt;/p>
+&lt;h2 id="ce-que-jai-retenu" >Ce que j&amp;rsquo;ai retenu
+&lt;span>
+&lt;a href="#ce-que-jai-retenu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>J&amp;rsquo;avais déjà pu utiliser Electron pour des projets personels et professionels. Dans le domaine professionel, ce package m&amp;rsquo;a permis de fournir une application à des clients afin de leur simplifier l&amp;rsquo;utilisation de l&amp;rsquo;application développée.&lt;/p>
+&lt;p>Electron est très complet et propose de nombreuses fonctionalité d&amp;rsquo;application desktop (ex.: Les notifications), je pense donc pouvoir le réutiliser dans mon avenir professionnel.&lt;/p></description></item></channel></rss>

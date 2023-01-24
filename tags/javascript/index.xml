@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>javascript on LabVeilleTech - Paul</title><link>https://example.com/tags/javascript/</link><description>LabVeilleTech - Paul (javascript)</description><generator>Hugo -- gohugo.io</generator><language>fr-CH</language><lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Article : Writing Cleaner JavaScript with Modules</title><link>https://example.com/post/js-module/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/js-module/</guid><description>&lt;p>Comment les modules permettent de séparer le code en différentes sections logiques, de réduire les risques de conflits de nom et de faciliter la réutilisation de code.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;Writing Cleaner JavaScript with Modules&amp;rdquo; explique comment l&amp;rsquo;utilisation des modules en JavaScript peut aider à écrire du code plus propre et plus organisé. Les modules permettent de séparer le code en sections logiques distinctes, réduisent les risques de conflits de nom et facilitent la réutilisation de code. Il décrit les différentes options disponibles pour utiliser les modules en JavaScript, tels que CommonJS, AMD et ECMAScript 6. Il donne des exemples concrets pour montrer comment utiliser les modules pour améliorer la qualité du code. Il insiste sur l&amp;rsquo;importance d&amp;rsquo;utiliser les modules pour écrire un code plus propre et plus maintenable. Il mentionne que les modules permettent de rendre le code plus facile à lire et à comprendre en permettant de découper les fonctionnalités en morceaux plus petits et plus gérables. Il conclut en disant que les modules sont un outil essentiel pour écrire du code JavaScript plus propre et plus facile à maintenir. Il encourage les développeurs à utiliser les modules pour écrire du code de meilleure qualité.&lt;/p>
+&lt;p>&lt;a href="https://dev.to/honeybadger/writing-cleaner-javascript-with-modules-an">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="ce-quil-faut-retenir" >Ce qu&amp;rsquo;il faut retenir
+&lt;span>
+&lt;a href="#ce-quil-faut-retenir">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les modules sont des outils puissants lors du développement. Dans une grande majorité de projets, leur utilisation permettra de mieux structurer le code afin que celui-ci soit plus facile d&amp;rsquo;utilisation et propre.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#75715e">// user sign in
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">userSignIn&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;User signed in&amp;#34;&lt;/span>);
+}
+&lt;span style="color:#75715e">// user sign out
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">userSignOut&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;User signed out&amp;#34;&lt;/span>);
+}
+&lt;span style="color:#75715e">// delete task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">deleteTask&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> deleted`&lt;/span>);
+}
+&lt;span style="color:#75715e">//add task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">addTask&lt;/span>(&lt;span style="color:#a6e22e">task&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">task&lt;/span>.&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> added`&lt;/span>);
+}
+&lt;span style="color:#75715e">//edit task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">editTask&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>, &lt;span style="color:#a6e22e">changes&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> edited`&lt;/span>);
+}
+&lt;span style="color:#75715e">//complete task
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">completeTask&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Task &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> completed`&lt;/span>);
+}
+&lt;span style="color:#66d9ef">export&lt;/span> {
+&lt;span style="color:#a6e22e">userSignIn&lt;/span>,
+&lt;span style="color:#a6e22e">userSignOut&lt;/span>,
+&lt;span style="color:#a6e22e">deleteTask&lt;/span>,
+&lt;span style="color:#a6e22e">addTask&lt;/span>,
+&lt;span style="color:#a6e22e">editTask&lt;/span>,
+&lt;span style="color:#a6e22e">completeTask&lt;/span>
+};
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Cet article détaille précisément l&amp;rsquo;utilisation des modules avec des exemples concrets. L&amp;rsquo;article me sera alors très utile dans de nombreux projets futurs afin de rendre mon code plus structuré et lisible.&lt;/p></description></item></channel></rss>

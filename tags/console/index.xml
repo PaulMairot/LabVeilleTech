@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>console on LabVeilleTech - Paul</title><link>https://example.com/tags/console/</link><description>LabVeilleTech - Paul (console)</description><generator>Hugo -- gohugo.io</generator><language>fr-CH</language><lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/console/index.xml" rel="self" type="application/rss+xml"/><item><title>Article : Beyond Console.log() – Level up Your Debugging Skills</title><link>https://example.com/post/console-log/</link><pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate><guid>https://example.com/post/console-log/</guid><description>&lt;p>Différentes techniques de débogage pour améliorer les compétences de développement en JavaScript.&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article &amp;ldquo;Beyond console.log: Level Up Your Debugging Skills&amp;rdquo; vise à aider les développeurs à améliorer leurs compétences de débogage en JavaScript. Il explique comment utiliser des outils tels que la console JavaScript, les déclarations de breakpoints, les outils de débogage de navigateur, les outils de débogage de réseau, les outils de débogage de performance et les outils de débogage de source pour résoudre les erreurs et optimiser le code.&lt;/p>
+&lt;p>La console JavaScript est un outil puissant qui permet de loguer des informations dans la console du navigateur. Il permet de loguer des messages, des objets, des tableaux, etc. Les déclarations de breakpoints permettent de mettre en pause l&amp;rsquo;exécution du code à un endroit spécifique pour pouvoir inspecter les variables et les propriétés de l&amp;rsquo;objet. Les outils de débogage de navigateur sont intégrés à la plupart des navigateurs modernes et permettent de déboguer le code JavaScript, d&amp;rsquo;inspecter les éléments HTML et CSS, de visualiser les requêtes réseau et de mesurer les performances.&lt;/p>
+&lt;p>&lt;a href="https://www.sitepoint.com/beyond-console-log-level-up-your-debugging-skills/">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="ce-que-jai-découvert" >Ce que j&amp;rsquo;ai découvert
+&lt;span>
+&lt;a href="#ce-que-jai-d%c3%a9couvert">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Comme beaucoup de monde, je n&amp;rsquo;utilise partiquement que la simple commande &lt;code>console.log()&lt;/code>. Cet article met alors en lumière toutes les autres fonctions de la console. La partie sur &lt;code>console.time()&lt;/code> m&amp;rsquo;était inconnue et est utile dans nombreux projets.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">time&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;go&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">for&lt;/span>(&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">200000&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) {
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">x&lt;/span> &lt;span style="color:#f92672">=&lt;/span> Math.&lt;span style="color:#a6e22e">random&lt;/span>()&lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#ae81ff">2000&lt;/span>;
+}
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">timeEnd&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;go&amp;#39;&lt;/span>); &lt;span style="color:#75715e">// go: 11.7861328125 ms
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Dans tous mes futurs projets, cet article me sera utile lors de la partie de débogage. Celui-ci me permettra de mieux structurer mes commandes console et ainsi optimiser la recherche de bugs éventuels dans mes développment.&lt;/p></description></item></channel></rss>
