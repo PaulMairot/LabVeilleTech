@@ -3,7 +3,7 @@ languageCode = "fr-CH"
 title = "LabVeilleTech - Paul"
 theme = "anubis"
 
-paginate = 5
+paginate = 6
 
 [menu]
 
