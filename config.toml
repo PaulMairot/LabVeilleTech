@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 languageCode = "fr-CH"
 title = "LabVeilleTech - Paul"
-theme = "anubis"
+theme =  ["github.com/Mitrichius/hugo-theme-anubis"]
 
 paginate = 6
 
