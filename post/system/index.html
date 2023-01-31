@@ -4,9 +4,8 @@
 <meta name=HandheldFriendly content="True">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
-<title>Posts - Laboratoire de Veille Technologique - Paul</title>
-<meta name=description content>
-<link rel=alternate type=application/rss+xml href=https://paulmairot.github.io/LabVeilleTech/post/index.xml title="Laboratoire de Veille Technologique - Paul">
+<title>Mon système de veille - Laboratoire de Veille Technologique - Paul</title>
+<meta name=description content="Explication de mon système de veille">
 <link rel=icon type=image/x-icon href=https://paulmairot.github.io/LabVeilleTech/favicon.ico>
 <link rel=apple-touch-icon-precomposed href=https://paulmairot.github.io/LabVeilleTech/favicon.png>
 <style>body{visibility:hidden;opacity:0}</style>
@@ -15,13 +14,15 @@
 </noscript>
 <link rel=stylesheet href=https://paulmairot.github.io/LabVeilleTech/css/style.min.aac3b3a2a3235d20a652d9ccde7ec59be09f74c45de387513f681d02f3912b95.css integrity="sha256-qsOzoqMjXSCmUtnM3n7Fm+CfdMRd44dRP2gdAvORK5U=">
 <script src=https://paulmairot.github.io/LabVeilleTech/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js type=text/javascript integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk+RC+0I="></script>
-<meta property="og:title" content="Posts">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://paulmairot.github.io/LabVeilleTech/post/">
+<meta property="og:title" content="Mon système de veille">
+<meta property="og:description" content="Explication de mon système de veille">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paulmairot.github.io/LabVeilleTech/post/system/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2023-01-29T00:00:00+00:00">
+<meta property="article:modified_time" content="2023-01-29T00:00:00+00:00">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Posts">
-<meta name=twitter:description content>
+<meta name=twitter:title content="Mon système de veille">
+<meta name=twitter:description content="Explication de mon système de veille">
 </head>
 <body>
 <a class=skip-main href=#main>Skip to main content</a>
@@ -41,15 +42,43 @@
 </nav>
 </header>
 <main id=main tabindex=-1>
-<div class=index-content>
-</div>
-<div class="articles h-feed">
-<h1 class=post-title>Posts</h1>
-<div class="post-short-list h-entry">
+<article class="post h-entry">
 <div class=post-header>
 <header>
-<h2 class="p-name post-title"><a class=u-url href=/LabVeilleTech/post/system/>Mon système de veille</a></h2>
+<h1 class="p-name post-title">Mon système de veille</h1>
 </header>
+</div>
+<div class="content e-content">
+<p>Au travers du cours Laboratoire de Veille Technologique, plusieurs outils nous ont été proposés afin de mettre en place notre premier système de veille. Voici le miens.</p>
+<h1 id=les-sources->Les sources ?
+<span>
+<a href=#les-sources-><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+</a>
+</span>
+</h1><p>En se basant sur mon domaine décrit dans la page à propos j&rsquo;ai pu lister un ensemble de sources d&rsquo;informations, voici quelques exemples :</p>
+<ul>
+<li><a href=https://www.30secondsofcode.org/>30 seconds of code</a></li>
+<li><a href=https://css-tricks.com/>CSS-Tricks</a></li>
+<li><a href=https://dev.to/>DEV Community</a></li>
+<li><a href=https://www.sitepoint.com/>SitePoint</a></li>
+</ul>
+<h1 id=récupérer-linformation-et-la-consommer>Récupérer l&rsquo;information et la consommer
+<span>
+<a href=#r%c3%a9cup%c3%a9rer-linformation-et-la-consommer><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+</a>
+</span>
+</h1><p>Après avoir déterminer ces sources d&rsquo;informations, il était alors question de comment cette information allait me parvenir. Je me suis alors orienté vers les feeds RSS, la grande majorité des sources choisies précédemment le proposant.</p>
+<blockquote>
+<p>Un flux RSS est un moyen de s&rsquo;abonner à un grand nombre de site d&rsquo;acualité pour recevoir directement tous les articles qu&rsquo;ils publient.</p>
+</blockquote>
+<p>J&rsquo;ai alors opté pour l&rsquo;application <a href=https://feedly.com>Feedly</a>, que je connaissais déjà, afin de pouvoir visualiser les flux choisis.</p>
+<h1 id=garder-linformation-dans-le-temps>Garder l&rsquo;information dans le temps
+<span>
+<a href=#garder-linformation-dans-le-temps><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+</a>
+</span>
+</h1><p>Malgré le fait que l&rsquo;application Feedly permette de sauvegarder des articles, il me fallais un autre moyen de les concerver afin que ceux-ci ne disparaissent pas sans prévenir. J&rsquo;ai alors trouvé une solution me permettant de connecter mon compte Feedly à mon Notion.</p>
+<p>Cette solution est celle de <a href=https://zapier.com/apps/feedly/integrations/notion>Zapier</a>. J&rsquo;ai alors pu créer un automatisation afin que dès lors où je sauvegarde un article sur Feedly, celui-ci se trouve directement dans une base de données Notion.</p>
 </div>
 <div class=post-info>
 <div class="post-date dt-published">2023-01-29</div>
@@ -62,80 +91,7 @@
 </ul>
 </div>
 </div>
-</div>
-<div class="post-short-list h-entry">
-<div class=post-header>
-<header>
-<h2 class="p-name post-title"><a class=u-url href=/LabVeilleTech/post/console-log/>Article : Beyond Console.log() – Level up Your Debugging Skills</a></h2>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2023-01-15</div>
-<a class="post-hidden-url u-url" href=https://paulmairot.github.io/LabVeilleTech/post/console-log/>https://paulmairot.github.io/LabVeilleTech/post/console-log/</a>
-<a href=https://paulmairot.github.io/LabVeilleTech class="p-name p-author post-hidden-author h-card" rel=me>Paul Mairot</a>
-<div class=post-taxonomies>
-<ul class=post-tags>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/article/>#article</a></li>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/console/>#console</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="post-short-list h-entry">
-<div class=post-header>
-<header>
-<h2 class="p-name post-title"><a class=u-url href=/LabVeilleTech/post/js-module/>Article : Writing Cleaner JavaScript with Modules</a></h2>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2023-01-15</div>
-<a class="post-hidden-url u-url" href=https://paulmairot.github.io/LabVeilleTech/post/js-module/>https://paulmairot.github.io/LabVeilleTech/post/js-module/</a>
-<a href=https://paulmairot.github.io/LabVeilleTech class="p-name p-author post-hidden-author h-card" rel=me>Paul Mairot</a>
-<div class=post-taxonomies>
-<ul class=post-tags>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/article/>#article</a></li>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/javascript/>#javascript</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="post-short-list h-entry">
-<div class=post-header>
-<header>
-<h2 class="p-name post-title"><a class=u-url href=/LabVeilleTech/post/electron/>Expérimentation : ElectronJS</a></h2>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2023-01-13</div>
-<a class="post-hidden-url u-url" href=https://paulmairot.github.io/LabVeilleTech/post/electron/>https://paulmairot.github.io/LabVeilleTech/post/electron/</a>
-<a href=https://paulmairot.github.io/LabVeilleTech class="p-name p-author post-hidden-author h-card" rel=me>Paul Mairot</a>
-<div class=post-taxonomies>
-<ul class=post-tags>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/experimentation/>#experimentation</a></li>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/js/>#js</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="post-short-list h-entry">
-<div class=post-header>
-<header>
-<h2 class="p-name post-title"><a class=u-url href=/LabVeilleTech/post/illusion-speed/>Article : The illusion of speed – why perceived performance matters</a></h2>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2023-01-12</div>
-<a class="post-hidden-url u-url" href=https://paulmairot.github.io/LabVeilleTech/post/illusion-speed/>https://paulmairot.github.io/LabVeilleTech/post/illusion-speed/</a>
-<a href=https://paulmairot.github.io/LabVeilleTech class="p-name p-author post-hidden-author h-card" rel=me>Paul Mairot</a>
-<div class=post-taxonomies>
-<ul class=post-tags>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/article/>#article</a></li>
-<li><a href=https://paulmairot.github.io/LabVeilleTech/tags/performence/>#performence</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+</article>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>
