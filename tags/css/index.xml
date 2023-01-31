@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>css on Laboratoire de Veille Technologique - Paul</title><link>https://paulmairot.github.io/LabVeilleTech/tags/css/</link><description>Laboratoire de Veille Technologique - Paul (css)</description><generator>Hugo -- gohugo.io</generator><language>fr-CH</language><lastBuildDate>Mon, 16 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://paulmairot.github.io/LabVeilleTech/tags/css/index.xml" rel="self" type="application/rss+xml"/><item><title>Article : More Real-World Uses for :has()</title><link>https://paulmairot.github.io/LabVeilleTech/post/css-has/</link><pubDate>Mon, 16 Jan 2023 00:00:00 +0000</pubDate><guid>https://paulmairot.github.io/LabVeilleTech/post/css-has/</guid><description>&lt;p>Comment utiliser la pseudo-classe CSS &amp;lsquo;has&amp;rsquo; pour créer des styles conditionnels basés sur la structure du DOM&lt;/p>
+&lt;h2 id="résumé-de-larticle" >Résumé de l&amp;rsquo;article
+&lt;span>
+&lt;a href="#r%c3%a9sum%c3%a9-de-larticle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article décrit en détail comment la pseudo-classe CSS &amp;ldquo;has&amp;rdquo; peut être utilisée pour créer des styles conditionnels en se basant sur la structure du DOM. Il explique comment &amp;ldquo;has&amp;rdquo; peut être utilisé pour améliorer l&amp;rsquo;expérience utilisateur en fournissant plusieurs exemples concrets. L&amp;rsquo;un des exemples les plus importants montre comment &amp;ldquo;has&amp;rdquo; peut être utilisé pour changer la couleur d&amp;rsquo;un lien lorsqu&amp;rsquo;il est activé. D&amp;rsquo;autres exemples incluent la modification de la mise en page en fonction de la présence d&amp;rsquo;un élément spécifique, ainsi que la mise en œuvre d&amp;rsquo;interactions telles que les hover en utilisant &amp;ldquo;has&amp;rdquo;. En général, l&amp;rsquo;article montre comment &amp;ldquo;has&amp;rdquo; peut être utilisé pour améliorer la navigation, la mise en page et l&amp;rsquo;accessibilité en fournissant des solutions concrètes à des problèmes fréquents rencontrés par les développeurs front-end.&lt;/p>
+&lt;p>&lt;a href="https://css-tricks.com/more-real-world-uses-for-has/">Lien vers l&amp;rsquo;article complet&lt;/a>&lt;/p>
+&lt;h2 id="ce-qui-ma-plu" >Ce qui m&amp;rsquo;a plu
+&lt;span>
+&lt;a href="#ce-qui-ma-plu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>L&amp;rsquo;article présente une partie concernant la mise en place d&amp;rsquo;un menu de site. J&amp;rsquo;ai trouvé que cette partie pouvait s&amp;rsquo;appliquer à 80% des sites que j&amp;rsquo;ai déjà pu concevoir et que ceci aurait été un jeu d&amp;rsquo;enfant avec la solution proposé par l&amp;rsquo;article.&lt;/p>
+&lt;h2 id="quand-cela-me-sera-t-il-utile-" >Quand cela me sera-t-il utile ?
+&lt;span>
+&lt;a href="#quand-cela-me-sera-t-il-utile-">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Les solutions proposées par cet article me seront utiles dans tous mes futurs projets web afin de simplifer la partie CSS.&lt;/p></description></item></channel></rss>
